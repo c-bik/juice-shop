@@ -29,7 +29,7 @@ module.exports = (sequelize, { STRING, INTEGER }) => {
       validate: {
         min: {
           args: 1,
-          msg: 'Rating must be < 1'
+          msg: 'Rating must be > 0'
         }
       },
       set (rating) {
