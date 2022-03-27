@@ -15,8 +15,8 @@ def req(url: str, json: dict = None) -> dict:
         resp = resp.json()
         pprint(resp)
         return resp
-    except:
-        return None
+    except Exception as e:
+        print(e)
 
 
 def zero_star(host):
@@ -35,7 +35,7 @@ def zero_star(host):
 
 if __name__ == '__main__':
     vulnerable_host = "http://ec2-34-215-113-110.us-west-2.compute.amazonaws.com"
-    secure_host = "http://localhost:3000"
+    secure_host = "http://localhost:5000"
 
     print("----> INSECURE")
     zero_star(vulnerable_host)
