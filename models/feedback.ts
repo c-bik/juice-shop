@@ -26,7 +26,14 @@ module.exports = (sequelize, { STRING, INTEGER }) => {
     rating: {
       type: INTEGER,
       allowNull: false,
+      validate: {
+        min: {
+          args: 1,
+          msg: 'Rating must be > 0'
+        }
+      },
       set (rating) {
+        console.log('==========> setting rating', rating)
         this.setDataValue('rating', rating)
         utils.solveIf(challenges.zeroStarsChallenge, () => { return rating === 0 })
       }
