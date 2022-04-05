@@ -334,7 +334,7 @@ async function createProducts () {
           }
           return persistedProduct
         })
-          .then(async ({ id }: { id: number }) =>
+          /* .then(async ({ id }: { id: number }) =>
             await Promise.all(
               reviews.map(({ text, author }) =>
                 mongodb.reviews.insert({
@@ -348,7 +348,7 @@ async function createProducts () {
                 })
               )
             )
-          )
+          ) */
     )
   )
 

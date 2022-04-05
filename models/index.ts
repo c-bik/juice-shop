@@ -9,17 +9,14 @@ import { Model } from 'sequelize'
 const path = require('path')
 const sequelizeNoUpdateAttributes = require('sequelize-notupdate-attributes')
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('database', 'username', 'password', {
-  dialect: 'sqlite',
+const sequelize = new Sequelize('postgres', 'postgres', 'abcd1234', {
+  host: 'localhost',
+  port: 5432,
+  dialect: 'postgres',
   retry: {
-    match: [
-      /SQLITE_BUSY/
-    ],
     name: 'query',
     max: 5
   },
-  transactionType: 'IMMEDIATE',
-  storage: 'data/juiceshop.sqlite',
   logging: false
 })
 sequelizeNoUpdateAttributes(sequelize)
