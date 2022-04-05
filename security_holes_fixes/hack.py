@@ -43,10 +43,10 @@ def confidential_document(host):
 
 if __name__ == '__main__':
     vulnerable_host = "http://ec2-34-215-113-110.us-west-2.compute.amazonaws.com"
-    secure_host = "http://localhost:3000"
+    secure_host = "http://localhost"
 
     print()
-    print("=========== Zero Start ==========>")
+    print("=========== Zero Star ==========>")
     print("----> INSECURE")
     zero_star(vulnerable_host)
     print()
@@ -55,8 +55,8 @@ if __name__ == '__main__':
     zero_star(secure_host)
     print("<=================================")
 
-    print()
-    print("===== Confidential Documents ====>")
-    print()
-    confidential_document(vulnerable_host)
-    print("<=================================")
+    # print()
+    # print("===== Confidential Documents ====>")
+    # print()
+    # confidential_document(vulnerable_host)
+    # print("<=================================")
